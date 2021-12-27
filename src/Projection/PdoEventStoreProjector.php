@@ -827,7 +827,7 @@ EOT;
         }
 
         if ($statement->errorCode() !== '00000') {
-            throw ProjectionNotCreatedException::with($this->name);
+            throw RuntimeException::fromStatementErrorInfo($statement->errorInfo());
         }
     }
 
